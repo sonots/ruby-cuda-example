@@ -16,8 +16,7 @@ void my_kernel_launch()
 {
   int N = 8;
   int *a;
-  //cudaMallocManaged((void**)&a, sizeof(int)*N);
-  cudaMalloc((void**)&a, sizeof(int)*N);
+  cudaMallocManaged((void**)&a, sizeof(int)*N);
 
   //*a = 11;
   //for (int i = 0; i < N; i++)
@@ -34,9 +33,9 @@ void my_kernel_launch()
   //printf("\n");
 
   my_kernel<<<2,2>>>(a, 10, N);
-  printf("%d\n", *a);
-  //for (int i = 0; i < N; i++)
-  //  printf("%d ", a[i]);
-  //printf("\n");
+  cudaDeviceSynchronize();
+  for (int i = 0; i < N; i++)
+    printf("%d ", a[i]);
+  printf("\n");
 }
 
