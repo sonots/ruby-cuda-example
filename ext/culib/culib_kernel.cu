@@ -4,11 +4,9 @@
 __global__ 
 void my_kernel(int *ptr, int val, size_t N)
 {
-    size_t i = blockIdx.x * blockDim.x + threadIdx.x;
-    if (i < N) ptr[i] = val;
-    //for (size_t i = blockIdx.x * blockDim.x + threadIdx.x; i < N; i += blockDim.x * gridDim.x) {
-    //    ptr[i] = val;
-    //}
+    for (size_t i = blockIdx.x * blockDim.x + threadIdx.x; i < N; i += blockDim.x * gridDim.x) {
+        ptr[i] = val;
+    }
 }
 
 extern "C"
