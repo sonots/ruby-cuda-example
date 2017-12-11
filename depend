@@ -1,0 +1,2 @@
+culib.c.o: culib.c
+culib_kernel.cu.o: culib_kernel.cu

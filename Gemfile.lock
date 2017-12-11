@@ -1,0 +1,26 @@
+PATH
+  remote: /home/sonots/src/github.com/sonots/mkmf-cu
+  specs:
+    mkmf-cu (0.1.2)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    power_assert (1.1.1)
+    rake (12.3.0)
+    rake-compiler (1.0.4)
+      rake
+    test-unit (3.2.7)
+      power_assert
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  mkmf-cu!
+  rake
+  rake-compiler
+  test-unit
+
+BUNDLED WITH
+   1.16.0
